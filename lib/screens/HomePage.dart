@@ -16,17 +16,27 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 186, 219, 187),
-        title: const Center(
-          child: Text(
-            '🎶 أغانيك',
-            style: TextStyle(
-              color: Color.fromARGB(255, 0, 0, 0),
-              fontSize: 40,
+        title: Row(
+          children: [
+            Container(
+              child: const Column(
+                children: [
+                  Center(
+                    child: Text(
+                      ' أغانيك',
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
-      body: Column(
+      body: ListView(
         children: [
           Category(
             ontap: () {
@@ -35,9 +45,10 @@ class HomePage extends StatelessWidget {
                 return const Wigs();
               }));
             },
-            color: Colors.black54,
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'ويجز',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -45,9 +56,10 @@ class HomePage extends StatelessWidget {
                 return const AmaarHosne();
               }));
             },
-            color: const Color.fromARGB(221, 0, 68, 255),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'عمار حسنى',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -55,9 +67,10 @@ class HomePage extends StatelessWidget {
                 return const AhmedKamel();
               }));
             },
-            color: const Color.fromARGB(221, 8, 235, 243),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'احمد كامل ',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -65,9 +78,10 @@ class HomePage extends StatelessWidget {
                 return const MuslimSaad();
               }));
             },
-            color: const Color.fromARGB(221, 14, 243, 33),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'مسلم حزين',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -75,9 +89,10 @@ class HomePage extends StatelessWidget {
                 return const RagepAlama();
               }));
             },
-            color: const Color.fromARGB(221, 240, 40, 223),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'راغب علامة',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -85,9 +100,10 @@ class HomePage extends StatelessWidget {
                 return const RamySapry();
               }));
             },
-            color: const Color.fromARGB(221, 217, 224, 243),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: 'رامى صبرى ',
           ),
+          const Divider(color: Colors.black, thickness: 1),
           Category(
             ontap: () {
               Navigator.push(context,
@@ -95,7 +111,7 @@ class HomePage extends StatelessWidget {
                 return const TamerAshor();
               }));
             },
-            color: const Color.fromARGB(137, 3, 157, 184),
+            color: Color.fromARGB(136, 105, 102, 102),
             text: '   تامر عاشور',
           ),
         ],
