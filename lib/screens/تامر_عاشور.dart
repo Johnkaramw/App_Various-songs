@@ -6,10 +6,10 @@ class TamerAshor extends StatefulWidget {
   const TamerAshor({Key? key}) : super(key: key);
 
   @override
-  _RamyAiaashState createState() => _RamyAiaashState();
+  _TamerAshorState createState() => _TamerAshorState();
 }
 
-class _RamyAiaashState extends State<TamerAshor> {
+class _TamerAshorState extends State<TamerAshor> {
   final List<Songs> music = const [
     Songs(text: 'هيجيلي موجوع'),
     Songs(text: 'عديت'),
@@ -51,23 +51,26 @@ class _RamyAiaashState extends State<TamerAshor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(66, 0, 0, 0),
+        backgroundColor: Colors.black, // توحيد لون الخلفية للـ AppBar
         title: Row(
           children: [
             const Text(
               'تامر عاشور',
               style: TextStyle(
-                color: Color.fromARGB(255, 255, 0, 0),
-                fontSize: 30,
+                color: Colors.amberAccent, // لون جذاب للنص
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Expanded(
               child: TextField(
-                decoration: const InputDecoration(
-                  hintText: 'بحث فى الاغانى ...',
+                decoration: InputDecoration(
+                  hintText: 'بحث في الأغانى...',
+                  hintStyle: TextStyle(color: Colors.grey.shade400),
                   border: InputBorder.none,
                 ),
+                style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   setState(() {
                     _searchText = value;
@@ -77,7 +80,7 @@ class _RamyAiaashState extends State<TamerAshor> {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search, color: Colors.white),
               onPressed: () {
                 _scrollToSong(_searchText);
               },
@@ -85,12 +88,18 @@ class _RamyAiaashState extends State<TamerAshor> {
           ],
         ),
       ),
-      body: ListView.builder(
-        controller: _controller,
-        itemCount: music.length,
-        itemBuilder: (BuildContext context, int index) {
-          return contaner(music: music[index]);
-        },
+      body: Container(
+        color: Colors.grey.shade900, // لون الخلفية الأساسي للصفحة
+        child: ListView.builder(
+          controller: _controller,
+          itemCount: music.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
+              child: Contaner(music: music[index]),
+            );
+          },
+        ),
       ),
     );
   }
@@ -99,8 +108,8 @@ class _RamyAiaashState extends State<TamerAshor> {
     for (int i = 0; i < music.length; i++) {
       if (music[i].text.contains(searchText)) {
         _controller.animateTo(
-          i * 100.0, // 100.0 is an arbitrary value for the item height
-          duration: Duration(milliseconds: 500),
+          i * 100.0, // ارتفاع العنصر الافتراضي
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
         break;

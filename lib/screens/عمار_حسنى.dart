@@ -1,10 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:songs_app/components/contaner.dart';
 import 'package:songs_app/models/clsses.dart';
 
 class AmaarHosne extends StatelessWidget {
   const AmaarHosne({super.key});
+  
   final List<Songs> music = const [
     Songs(text: 'هاموش'),
     Songs(text: 'كل سنة'),
@@ -48,24 +48,32 @@ class AmaarHosne extends StatelessWidget {
     Songs(text: 'سد'),
     Songs(text: 'شمع')
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(66, 66, 61, 61),
+        backgroundColor: Colors.black, // لون الخلفية موحد
         title: const Text(
-          'أغانى عمار حسنى ',
+          'أغانى عمار حسنى',
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 0, 0),
-            fontSize: 30,
+            color: Colors.amberAccent, // اللون الذهبي للنص
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: music.length,
-        itemBuilder: (BuildContext context, int index) {
-          return contaner(music: music[index]);
-        },
+      body: Container(
+        color: Colors.grey.shade900, // الخلفية الداكنة للصفحة
+        child: ListView.builder(
+          itemCount: music.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
+              child: Contaner(music: music[index]),
+            );
+          },
+        ),
       ),
     );
   }

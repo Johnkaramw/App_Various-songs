@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
-  Category({this.color, this.text, this.ontap});
-  String? text;
-  Color? color;
-  Function()? ontap;
+  const Category({Key? key, required this.color, required this.text, required this.ontap}) : super(key: key);
+  
+  final String text;
+  final Color color;
+  final Function() ontap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -13,11 +15,14 @@ class Category extends StatelessWidget {
         color: color,
         height: 70,
         width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
         child: Center(
           child: Text(
-            text!,
+            text,
             style: const TextStyle(
-              fontSize: 40,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
           ),
         ),

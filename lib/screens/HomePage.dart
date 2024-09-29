@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../components/Category.dart';
-import 'احمد_كامل.dart';
+
+ import 'احمد_كامل.dart';
 import 'راغب_علامة.dart';
 import 'رامى_صبرى.dart';
 import 'تامر_عاشور.dart';
@@ -15,106 +15,77 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 186, 219, 187),
-        title: Row(
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        title: const Row(
           children: [
-            Container(
-              child: const Column(
-                children: [
-                  Center(
-                    child: Text(
-                      ' أغانيك',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontSize: 40,
-                      ),
-                    ),
-                  ),
-                ],
+            Text(
+              'أغانيك',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
         ),
       ),
       body: ListView(
+        padding: const EdgeInsets.all(10.0),
         children: [
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const Wigs();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'ويجز',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const AmaarHosne();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'عمار حسنى',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const AhmedKamel();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'احمد كامل ',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const MuslimSaad();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'مسلم حزين',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const RagepAlama();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'راغب علامة',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const RamySapry();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: 'رامى صبرى ',
-          ),
-          const Divider(color: Colors.black, thickness: 1),
-          Category(
-            ontap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return const TamerAshor();
-              }));
-            },
-            color: Color.fromARGB(136, 105, 102, 102),
-            text: '   تامر عاشور',
-          ),
+          buildCategoryItem(context, 'ويجز', const Wigs()),
+          buildCategoryItem(context, 'عمار حسنى', const AmaarHosne()),
+          buildCategoryItem(context, 'احمد كامل', const AhmedKamel()),
+          buildCategoryItem(context, 'مسلم حزين', const MuslimSaad()),
+          buildCategoryItem(context, 'راغب علامة', const RagepAlama()),
+          buildCategoryItem(context, 'رامى صبرى', const RamySapry()),
+          buildCategoryItem(context, 'تامر عاشور', const TamerAshor()),
         ],
+      ),
+    );
+  }
+
+  Widget buildCategoryItem(BuildContext context, String text, Widget page) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (BuildContext context) {
+            return page;
+          }),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(136, 105, 102, 102),
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0, 2),
+              blurRadius: 6,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(15),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.music_note,
+              color: Colors.white,
+              size: 30,
+            ),
+            const SizedBox(width: 10),
+            Text(
+              text,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

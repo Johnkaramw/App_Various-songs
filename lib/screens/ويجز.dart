@@ -4,6 +4,7 @@ import '../models/clsses.dart';
 
 class Wigs extends StatelessWidget {
   const Wigs({Key? key}) : super(key: key);
+  
   final List<Songs> music = const [
     Songs(text: 'البخت'),
     Songs(text: 'دورك جاى'),
@@ -28,9 +29,9 @@ class Wigs extends StatelessWidget {
     Songs(text: 'حلوة منك'),
     Songs(text: 'هصلا'),
     Songs(text: 'كان نفسى'),
-    Songs(text: 'ب السلامة '),
+    Songs(text: 'ب السلامة'),
     Songs(text: 'تجار حرام'),
-    Songs(text: 'كيفى كده '),
+    Songs(text: 'كيفى كده'),
     Songs(text: 'تايه'),
   ];
 
@@ -38,20 +39,27 @@ class Wigs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(66, 66, 61, 61),
+        backgroundColor: Colors.black, // لون الخلفية موحد
         title: const Text(
-          'أغانى ويجز ',
+          'أغانى ويجز',
           style: TextStyle(
-            color: Color.fromARGB(255, 255, 0, 0),
-            fontSize: 30,
+            color: Colors.amberAccent, // اللون الذهبي للنص
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: music.length,
-        itemBuilder: (BuildContext context, int index) {
-          return contaner(music: music[index]);
-        },
+      body: Container(
+        color: Colors.grey.shade900, // الخلفية الداكنة للصفحة
+        child: ListView.builder(
+          itemCount: music.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
+              child: Contaner(music: music[index]),
+            );
+          },
+        ),
       ),
     );
   }
