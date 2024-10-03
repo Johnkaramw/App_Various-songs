@@ -6,30 +6,20 @@ class RamySapry extends StatelessWidget {
   const RamySapry({super.key});
   
   final List<Songs> music = const [
-    Songs(text: 'غريب الحب'),
-    Songs(text: 'اضحك مع روبى'),
-    Songs(text: 'كعبك عالى'),
-    Songs(text: 'ملك الفرفشه'),
-    Songs(text: 'يمكن خير'),
-    Songs(text: 'ولسه ياما'),
-    Songs(text: 'انتى جنان'),
-    Songs(text: 'هى'),
-    Songs(text: 'مع نفسى'),
-    Songs(text: 'مكانك فوق'),
-    Songs(text: 'حكايات حميلة'),
-    Songs(text: 'هموت من غيرها'),
-    Songs(text: 'بيحرك فى المشاعر'),
-    Songs(text: 'حالة اكئاب'),
-    Songs(text: 'انتى بتهزرى'),
-    Songs(text: 'لذاذة'),
-    Songs(text: 'عيونه قابلونى'),
-    Songs(text: 'مش مرتاحين'),
-    Songs(text: 'خلينى اشوفك تانى'),
-    Songs(text: 'خطيرة'),
-    Songs(text: 'خليفة فى قلوبنا'),
-    Songs(text: 'مبروك علينا'),
-    Songs(text: 'حياتى مش تمام'),
-  ];
+    Songs(text: 'غريب الحب',filsuond :''),
+     Songs(text: 'يمكن خير',filsuond :''),
+    Songs(text: 'ولسه ياما',filsuond :''),
+    Songs(text: 'انتى جنان',filsuond :''),
+    Songs(text: 'هى',filsuond :''),
+    Songs(text: 'مع نفسى',filsuond :''),
+     Songs(text: 'حكايات حميلة',filsuond :''),
+     Songs(text: 'بيحرك فى المشاعر',filsuond :''),
+    Songs(text: 'حالة اكئاب',filsuond :''), 
+     Songs(text: 'عيونه قابلونى',filsuond :''),
+     Songs(text: 'خلينى اشوفك تانى',filsuond :''),
+    Songs(text: 'خطيرة',filsuond :''),
+     Songs(text: 'مبروك علينا',filsuond :''),
+   ];
 
   @override
   Widget build(BuildContext context) {

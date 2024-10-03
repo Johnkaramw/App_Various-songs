@@ -4,35 +4,24 @@ import '../models/clsses.dart';
 
 class Wigs extends StatelessWidget {
   const Wigs({Key? key}) : super(key: key);
-  
+
   final List<Songs> music = const [
-    Songs(text: 'البخت'),
-    Songs(text: 'دورك جاى'),
-    Songs(text: 'سكرتى'),
-    Songs(text: 'الدنيا ايه'),
-    Songs(text: 'عفاريت الاسفلت'),
-    Songs(text: 'بعودة يا بلادى'),
-    Songs(text: 'اللقطة'),
-    Songs(text: 'كان نفسى'),
-    Songs(text: 'الغسالة'),
-    Songs(text: 'سالينى'),
-    Songs(text: 'واحد وعشرين'),
-    Songs(text: 'اسياد الصود'),
-    Songs(text: 'منحوس'),
-    Songs(text: 'على راحتى'),
-    Songs(text: 'مش هقولك بيبى'),
-    Songs(text: 'على بابا'),
-    Songs(text: 'خد وهات'),
-    Songs(text: 'اى تى ام'),
-    Songs(text: 'باظت'),
-    Songs(text: 'متواليش'),
-    Songs(text: 'حلوة منك'),
-    Songs(text: 'هصلا'),
-    Songs(text: 'كان نفسى'),
-    Songs(text: 'ب السلامة'),
-    Songs(text: 'تجار حرام'),
-    Songs(text: 'كيفى كده'),
-    Songs(text: 'تايه'),
+    Songs(text: 'البخت', filsuond: ''),
+    Songs(text: 'دورك جاى', filsuond: ''),
+    Songs(text: 'البخت', filsuond: ''),
+    Songs(text: 'سكرتى', filsuond: ''),
+    Songs(text: 'عفاريت الاسفلت', filsuond: ''),
+    Songs(text: 'اللقطة', filsuond: ''),
+    Songs(text: 'الغسالة', filsuond: ''),
+    Songs(text: 'سالينى', filsuond: ''),
+    Songs(text: 'واحد وعشرين', filsuond: ''),
+    Songs(text: 'منحوس', filsuond: ''),
+    Songs(text: 'خد وهات', filsuond: ''),
+    Songs(text: 'اى تى ام', filsuond: ''),
+    Songs(text: 'حلوة منك', filsuond: ''),
+    Songs(text: 'هصلا', filsuond: ''),
+    Songs(text: 'ب السلامة', filsuond: ''),
+    Songs(text: 'كيفى كده', filsuond: ''),
   ];
 
   @override
@@ -55,7 +44,8 @@ class Wigs extends StatelessWidget {
           itemCount: music.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
               child: Contaner(music: music[index]),
             );
           },

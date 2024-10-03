@@ -6,35 +6,22 @@ class MuslimSaad extends StatelessWidget {
   const MuslimSaad({super.key});
   
   final List<Songs> music = const [
-    Songs(text: 'غمه'),
-    Songs(text: 'انا عربي'),
-    Songs(text: 'ماحبتنيش'),
-    Songs(text: 'متزعلش'),
-    Songs(text: 'هنتقابل'),
-    Songs(text: 'سابوك في البيت'),
-    Songs(text: 'صعبان عليكي'),
-    Songs(text: 'قلب فى الدفاتر'),
-    Songs(text: 'غصب عني'),
-    Songs(text: 'لو بس نرجع'),
-    Songs(text: 'عايزة اللي يفرفشلها'),
-    Songs(text: 'مين كان سبب'),
-    Songs(text: 'مابهتمش'),
-    Songs(text: 'من كتر الهم انا خدته دوا'),
-    Songs(text: 'مابهربش'),
-    Songs(text: 'مش ندمان'),
-    Songs(text: 'اتنسيت'),
-    Songs(text: 'كل اللي في قلبي'),
-    Songs(text: 'قبل ما اوصلك'),
-    Songs(text: 'معادش باقي'),
-    Songs(text: 'سكون'),
-    Songs(text: 'علي بالي'),
-    Songs(text: 'البير & مش قادر'),
-    Songs(text: 'هنيالك'),
-    Songs(text: 'خليكي في حضني الليله'),
-    Songs(text: 'مبينا كتير'),
-    Songs(text: 'صباحك'),
-    Songs(text: 'يومين و عدوا')
-  ];
+     Songs(text: 'ماحبتنيش',filsuond :''),
+    Songs(text: 'متزعلش',filsuond :''),
+    Songs(text: 'هنتقابل',filsuond :''),
+     Songs(text: 'صعبان عليكي',filsuond :''),
+    Songs(text: 'قلب فى الدفاتر',filsuond :''),
+      Songs(text: 'مين كان سبب',filsuond :''),
+     Songs(text: 'مش ندمان',filsuond :''),
+    Songs(text: 'اتنسيت',filsuond :''),
+     Songs(text: 'قبل ما اوصلك',filsuond :''),
+    Songs(text: 'معادش باقي',filsuond :''),
+    Songs(text: 'سكون',filsuond :''),
+    Songs(text: 'علي بالي',filsuond :''),
+     Songs(text: 'هنيالك',filsuond :''),
+     Songs(text: 'مبينا كتير',filsuond :''),
+    Songs(text: 'صباحك',filsuond :''),
+   ];
 
   @override
   Widget build(BuildContext context) {

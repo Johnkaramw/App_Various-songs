@@ -1,4 +1,5 @@
 class Songs {
   final String text;
-  const Songs({required this.text});
+  final String filsuond;
+  const Songs({required this.filsuond, required this.text});
 }

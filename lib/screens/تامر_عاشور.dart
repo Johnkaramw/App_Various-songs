@@ -11,31 +11,18 @@ class TamerAshor extends StatefulWidget {
 
 class _TamerAshorState extends State<TamerAshor> {
   final List<Songs> music = const [
-    Songs(text: 'هيجيلي موجوع'),
-    Songs(text: 'عديت'),
-    Songs(text: 'اصحى للكلام'),
-    Songs(text: 'بحبك وخايف '),
-    Songs(text: 'هتوحشنا'),
-    Songs(text: 'هى الناس'),
-    Songs(text: 'تملى'),
-    Songs(text: 'احنا الدنيا'),
-    Songs(text: 'اقعد نتكلم'),
-    Songs(text: 'كنت فين'),
-    Songs(text: 'كان موضوع'),
-    Songs(text: 'الفتره دى'),
-    Songs(text: 'مفيش جدعنه'),
-    Songs(text: 'خلتنى احس'),
-    Songs(text: 'خلينى فى حضنك'),
-    Songs(text: 'حنلها وانت بعيد'),
-    Songs(text: 'تيجى نتراهن'),
-    Songs(text: 'نعيش مع بعض'),
-    Songs(text: 'بقول عادى'),
-    Songs(text: 'ماتتغريش'),
-    Songs(text: 'معلش اصلى مدلعها '),
-    Songs(text: 'بياعه'),
-    Songs(text: 'حبيبى انت حبيبى'),
-    Songs(text: 'مابشوفش غير'),
-    Songs(text: 'من غير ماحكيلك'),
+    Songs(text: 'هيجيلي موجوع', filsuond: ''),
+    Songs(text: 'بحبك وخايف ', filsuond: ''),
+    Songs(text: 'هتوحشنا', filsuond: ''),
+    Songs(text: 'تملى', filsuond: ''),
+    Songs(text: 'كان موضوع', filsuond: ''),
+    Songs(text: 'الفتره دى', filsuond: ''),
+    Songs(text: 'خلتنى احس', filsuond: ''),
+    Songs(text: 'خلينى فى حضنك', filsuond: ''),
+    Songs(text: 'تيجى نتراهن', filsuond: ''),
+    Songs(text: 'بقول عادى', filsuond: ''),
+    Songs(text: 'مابشوفش غير', filsuond: ''),
+    Songs(text: 'من غير ماحكيلك', filsuond: ''),
   ];
 
   final ScrollController _controller = ScrollController();
@@ -95,7 +82,8 @@ class _TamerAshorState extends State<TamerAshor> {
           itemCount: music.length,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 4.0, horizontal: 10.0),
               child: Contaner(music: music[index]),
             );
           },
